@@ -1,10 +1,10 @@
-x: main.o
+gtwap: main.o
 
 main.o:
 	g++ -Wall -c main.cpp
 
 clean:
-	rm *.o x
+	rm *.o gtwap
 
 
 # dna: main.o keyword.o
