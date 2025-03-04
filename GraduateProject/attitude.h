@@ -1,6 +1,6 @@
 //Author: Kyle Frohlich
 //Date: 18Feb2025
-//Name:
+//Name: GTWAP
 
 using namespace std;
 #include <iostream>

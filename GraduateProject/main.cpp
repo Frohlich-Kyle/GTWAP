@@ -1,6 +1,6 @@
 //Author: Kyle Frohlich
 //Date: 23Jan2025
-//Name:
+//Name: GTWAP
 
 #include "network.h"
 
