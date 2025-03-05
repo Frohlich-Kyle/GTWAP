@@ -10,7 +10,7 @@
 
 class Network
 {
-    
+    Switch** theGraph;
 
     public:
     

@@ -53,6 +53,26 @@ void Attitude::setAttributes()
 {
     if(personality == "unset")
     {
-
+        percentDrop = -1;
+    }
+    else if(personality == "Selfish")
+    {
+        percentDrop = 40;
+    }
+    else if(personality == "Stingy")
+    {
+        percentDrop = 25;
+    }
+    else if(personality == "Cheap")
+    {
+        percentDrop = 15;
+    }
+    else if(personality == "Nice")
+    {
+        percentDrop = 5;
+    }
+    else if(personality == "Generous")
+    {
+        percentDrop = 1;
     }
 }
