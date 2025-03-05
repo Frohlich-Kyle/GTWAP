@@ -2,6 +2,10 @@
 //Date: 18Feb2025
 //Name: GTWAP
 
+
+#ifndef PACKET_H
+#define PACKET_H
+
 using namespace std;
 #include <iostream>
 
@@ -19,3 +23,5 @@ class Packet
         void setPriorityLevel(string);
         void setPriority(int);
 };
+
+#endif

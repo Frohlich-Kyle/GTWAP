@@ -2,6 +2,10 @@
 //Date: 18Feb2025
 //Name: GTWAP
 
+
+#ifndef ATTITUDE_H
+#define ATTITUDE_H
+
 using namespace std;
 #include <iostream>
 
@@ -24,3 +28,5 @@ class Attitude
 
         void setAttributes();
 };
+
+#endif

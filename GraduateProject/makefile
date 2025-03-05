@@ -1,6 +1,6 @@
 gtwap: main.o
 
-main.o:
+main.o: switch.h
 	g++ -Wall -c main.cpp
 
 clean:
