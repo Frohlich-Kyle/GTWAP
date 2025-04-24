@@ -24,13 +24,21 @@ Attitude::Attitude(Attitude& newAttitude)
     percentDrop = newAttitude.percentDrop;
 }
 
+Attitude Attitude::operator=(const Attitude& otherAttitude)
+{
+    this->personality = otherAttitude.getPersonality();
+    this->percentDrop = otherAttitude.getPercentDrop();
 
-string Attitude::getPersonality()
+    return *this;
+}
+
+
+string Attitude::getPersonality() const
 {
     return personality;
 }
 
-float Attitude::getPercentDrop()
+float Attitude::getPercentDrop() const
 {
     return percentDrop;
 }
@@ -53,6 +61,26 @@ void Attitude::setAttributes()
 {
     if(personality == "unset")
     {
-
+        percentDrop = -1;
+    }
+    if(personality == "Selfish")
+    {
+        percentDrop = 40;
+    }
+    if(personality == "Reserved")
+    {
+        percentDrop = 30;
+    }
+    if(personality == "Middling")
+    {
+        percentDrop = 20;
+    }
+    if(personality == "Giving")
+    {
+        percentDrop = 10;
+    }
+    if(personality == "Generous")
+    {
+        percentDrop = 0;
     }
 }
