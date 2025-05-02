@@ -26,6 +26,7 @@ class Attitude
         void setPersonality(string);
         void setPercentDrop(float);
 
+        void randomPersonality(int);
         void setAttributes();
 };
 

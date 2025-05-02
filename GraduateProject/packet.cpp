@@ -8,10 +8,9 @@
 Packet::Packet()
 {
     name = "noName";
-    priorityLevel = "unset";
+    //priorityLevel = "unset";
     priority = -1;
     logSize = 0;
-    apLog[Length];
     isDropped = false;
 }
 
@@ -27,10 +26,10 @@ string Packet::getName()
     return name;
 }
 
-string Packet::getPriorityLevel()
-{
-    return priorityLevel;
-}
+// string Packet::getPriorityLevel()
+// {
+//     return priorityLevel;
+// }
 
 int Packet::getPriority()
 {
@@ -52,6 +51,11 @@ bool Packet::getIsDropped()
     return isDropped;
 }
 
+int Packet::getPacketSize()
+{
+    return packetSize;
+}
+
 
 
 
@@ -60,10 +64,10 @@ void Packet::setName(string newName)
     name = newName;
 }
 
-void Packet::setPriorityLevel(string newPriorityLevel)
-{
-    priorityLevel = newPriorityLevel;
-}
+// void Packet::setPriorityLevel(string newPriorityLevel)
+// {
+//     priorityLevel = newPriorityLevel;
+// }
 
 void Packet::setPriority(int newPriority)
 {
@@ -83,12 +87,15 @@ void Packet::setLogSize(int newLogSize)
     logSize = newLogSize;
 }
 
-
 void Packet::setIsDropped(bool newIsDropped)
 {
     isDropped = newIsDropped;
 }
 
+void Packet::setPacketSize(int newPacketSize)
+{
+    packetSize = newPacketSize;
+}
 
 
 void Packet::addNetDev(NetworkDevice loggedDevice)
@@ -97,27 +104,29 @@ void Packet::addNetDev(NetworkDevice loggedDevice)
     {
         apLog[logSize] = loggedDevice;
         logSize++;
+        //cout << "Current Logged Devices: " << logSize << endl;
     }
     else if(logSize >= Length)
     {
-        cout << "Log size has been hit (# of devices logged = length of network)" << endl;
+        cout << "Log size cap has been hit (# of devices logged = length of network)" << endl;
         cout << "Something has gone terribly wrong!" << endl;
+        cout << "Current Logged Devices: " << logSize << endl;
     }
 }
 
 void Packet::statLogs()
 {
-    cout << "Network Devices Passed Through:";
+    cout << "Network Devices Passed Through: ";
 
     for(int index = 0; index < logSize; index++)
     {
         if(index == logSize - 1)
         {
-            cout << " " << apLog[index].getName() << endl;
+            cout << " " << apLog[index].getName() << " (" << apLog[index].getDeviceAttitude().getPersonality() << ") " << endl;
         }
         else
         {
-            cout << " " << apLog[index].getName() << ",";
+            cout << " " << apLog[index].getName() << " (" << apLog[index].getDeviceAttitude().getPersonality() << ") " << ",";
         }
     }
 

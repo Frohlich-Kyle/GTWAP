@@ -56,6 +56,32 @@ void Attitude::setPercentDrop(float newPercentDrop)
 }
 
 
+void Attitude::randomPersonality(int personalityNum)
+{
+    switch(personalityNum)
+    {
+        case 0:
+            this->personality == "Selfish";
+            this->percentDrop = 40;
+            break;
+        case 1:
+            this->personality == "Reserved";
+            this->percentDrop = 30;
+            break;
+        case 2:
+            this->personality == "Middling";
+            this->percentDrop = 20;
+            break;
+        case 3:
+            this->personality == "Giving";
+            this->percentDrop = 10;
+            break;
+        case 4:
+            this->personality == "Generous";
+            this->percentDrop = 0;
+            break;
+    }
+}
 
 void Attitude::setAttributes()
 {

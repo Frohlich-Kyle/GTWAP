@@ -7,12 +7,14 @@
 
 using namespace std;
 #include <iostream>
-#include "network.h"
+#include "networkdevice.h"
+
 
 class Packet
 {
-    string name, priorityLevel;
-    int priority, logSize;
+    string name;
+    //string priorityLevel
+    int priority, logSize, packetSize;
     NetworkDevice apLog[Length];
     bool isDropped;
 
@@ -21,18 +23,20 @@ class Packet
         Packet(Packet&);
 
         string getName();
-        string getPriorityLevel();
+        //string getPriorityLevel();
         int getPriority();
         NetworkDevice* getApLog();
         int getLogSize();
         bool getIsDropped();
+        int getPacketSize();
 
         void setName(string);
-        void setPriorityLevel(string);
+        //void setPriorityLevel(string);
         void setPriority(int);
         void setApLog(NetworkDevice*, int);
         void setLogSize(int);
         void setIsDropped(bool);
+        void setPacketSize(int);
 
         void addNetDev(NetworkDevice);
         void statLogs();

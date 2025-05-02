@@ -10,7 +10,7 @@ attitude.o: attitude.h
 network.o: network.h networkdevice.h
 	g++ -Wall -c network.cpp
 
-packet.o: packet.h
+packet.o: packet.h networkdevice.h
 	g++ -Wall -c packet.cpp
 
 networkdevice.o: attitude.h networkdevice.h
